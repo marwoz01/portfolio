@@ -257,12 +257,27 @@ main {
     z-index: -1;
 }
 
-
-.home-me {
+.home-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     position: absolute;
     top: 30%;
     left: 15%;
+}
+
+.home-me {
     padding: 20px;
+    margin-right: 20px;
+}
+
+.home-me i:hover {
+    cursor: pointer;
+}
+
+.home-photo img {
+    border-radius: 12px;
+    border: 1px solid #2ae973;
 }
 
 .home-me-1 {
@@ -291,6 +306,7 @@ main {
 
 .cv-button:hover {
     box-shadow: 0px 0px 2px 1px rgba(42,233,115,1);
+    transition: 0.3s ease;
 }
 
 .contact-button {
@@ -307,6 +323,7 @@ main {
 
 .contact-button:hover {
     box-shadow: 0px 0px 2px 1px rgba(42,233,115,1);
+    transition: 0.3s ease;
 }
 
 .home-me i {
@@ -317,6 +334,19 @@ main {
 }
 
 @media (max-width: 858px) {
+    .home-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .home-me {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .home-photo img {
+        width: 250px;
+        height: 250px;
+    }
+
     .home-me-2 {
         font-size: 4.4rem;
     }
@@ -327,37 +357,77 @@ main {
 .about {
     height: 700px;
     width: 100%;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .about-me {
     font-weight: bold;
     font-size: 5.6rem;
-    width: 60%;
+    padding-left: 200px;
+    padding-top: 200px;
     margin-bottom: 20px;
-    position: absolute;
-    top: 30%;
-    left: 15%;
-    padding: 20px;
+}
+
+.photo-of-me {
+    border: 1px solid #2ae973;
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 200px;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
 }
 
 .about-me-description {
-    position: absolute;
-    top: 45%;
-    left: 16%;
-    width: 40%;
+    padding-top: 80px;
+    padding-left: 60px;
+    width: 60%;
+    font-size: 1.2vw;
     line-height: 1.5;
 }
 
-@media (max-width: 858px) {
+@media (max-width: 1280px) {
+    .about {
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        padding: 20px;
+    }
+
     .about-me {
-        width: 90%;
-        font-size: 4.2rem;
+        width: 100%;
+        font-size: 5rem;
+        text-align: center;
+        margin-bottom: 20px;
+        margin-top: 240px;
+        padding-left: 0;
+        padding-top: 0;
+    }
+
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .photo-of-me {
+        margin-left: 0;
+        margin-bottom: 20px;
     }
 
     .about-me-description {
-        width: 75%;
-        text-align: justify;
+        width: 90%;
+        font-size: 1rem;
+        text-align: center;
+        padding-left: 0;
+        padding-top: 20px;
     }
 }
 
@@ -369,7 +439,6 @@ main {
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
     padding: 200px;
 }
 
@@ -378,12 +447,28 @@ main {
     margin-bottom: 20px;
 }
 
-.skills-icons {
+.skills-list {
     display: flex;
     gap: 20px;
     padding-right: 80px;
+    line-height: 1.5;
 }
 
-.skills-icons i {
-    font-size: 2.6rem;
+.skills-list li {
+    color: rgb(145, 145, 145);
+}
+
+.skills-list ul {
+    margin-right: 60px;
+}
+
+.skills-list-title {
+    padding-bottom: 16px;
+    font-size: 1.6rem;
+}
+
+@media (min-width: 858px) {
+    .skills-list ul {
+        margin-right: 8px;
+    }
 }
