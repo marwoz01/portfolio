@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'Brigast';
-    src: url('Brigast.otf');
+    font-family: 'NeuneMachina';
+    src: url('/font/PPNeueMachina-InktrapRegular.otf');
     font-weight: normal;
     font-style: normal;
 }
@@ -15,14 +15,133 @@
 }
 
 body {
-    font-family: 'Lato';
+    font-family: 'NeuneMachina';
     background-color: rgb(18, 18, 18);
 }
 
+/* PAGE LOADER */
+
+.page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(18, 18, 18, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 1s ease-out; 
+}
+
+.page-loader.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+@keyframes blinkCursor {
+    50% {
+      border-right-color: transparent;
+    }
+  }
+  
+  @keyframes typeAndDelete {
+    0%,
+    10% {
+      width: 0;
+    }
+    45%,
+    55% {
+      width: 6.2em;
+    }
+    90%,
+    100% {
+      width: 0;
+    }
+  }
+  
+  .terminal-loader {
+    border: 0.1em solid #333;
+    background-color: #1a1a1a;
+    color: #0f0;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1em;
+    padding: 1.5em 1em;
+    width: 12em;
+    margin: 100px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  
+  .terminal-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1.5em;
+    background-color: #333;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding: 0 0.4em;
+    box-sizing: border-box;
+  }
+  
+  .terminal-controls {
+    float: right;
+  }
+  
+  .control {
+    display: inline-block;
+    width: 0.6em;
+    height: 0.6em;
+    margin-left: 0.4em;
+    border-radius: 50%;
+    background-color: #777;
+  }
+  
+  .control.close {
+    background-color: #e33;
+  }
+  
+  .control.minimize {
+    background-color: #ee0;
+  }
+  
+  .control.maximize {
+    background-color: #0b0;
+  }
+  
+  .terminal-title {
+    float: left;
+    line-height: 1.5em;
+    color: #eee;
+  }
+  
+  .text {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.2em solid green;
+    animation: typeAndDelete 4s steps(11) infinite,
+      blinkCursor 0.5s step-end infinite alternate;
+    margin-top: 1.5em;
+    color: #0f0;
+  }  
+
+/* NAVBAR */
+
 nav {
-    background-color: rgb(18, 18, 18);
+    background-color: rgba(18, 18, 18, 0.25);
     height: 60px;
     width: 100%;
+    z-index: 100;
+    position: fixed;
 }
 
 nav ul {
@@ -42,19 +161,30 @@ nav ul li a {
     color: white;
 }
 
-a.active,a:hover {
-    color: #682ae9;
+a.active, a:hover {
+    color: #2ae973;
     transition: 0.3s ease;
 }
 
 .checkbtn {
     font-size: 30px;
-    color: white;
     float: right;
     line-height: 60px;
     margin-right: 40px;
     cursor: pointer;
     display: none;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+    line-height: 60px;
+    margin-left: 30px;
+}
+
+.greencolor {
+    color: #2ae973;
 }
 
 #check {
@@ -68,30 +198,192 @@ a.active,a:hover {
 
     ul {
         position: fixed;
-        width: 100%;
+        width: 23%;
         height: 100vh;
-        top: 80px;
-        left: -100%;
+        top: 60px;
+        right: -100%;
         text-align: center;
-        transition: all .5s;
+        padding: 16px;
+        transition: all .5s ease;
+        background-color: rgba(0, 0, 0, 0.25);
     }
 
     nav ul li {
         display: block;
-        margin: 50px 0;
+        margin: 30px 0;
         line-height: 30px;
     }
 
-    nav ul li a{
+    nav ul li a {
         font-size: 20px;
     }
 
-    a:hover,a.active {
-        color: #682ae9;
+    a:hover, a.active {
+        color: #2ae973;
         transition: 0.3s ease;
     }
 
     #check:checked ~ ul {
-        left: 0;
+        right: -4%;
     }
+}
+
+/* MAIN */
+main {
+    position: relative;
+    z-index: 1;
+    height: 900px;
+    overflow: hidden;
+}
+
+.main-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.background-overlay {
+    background: 
+        linear-gradient(180deg, rgba(0, 0, 0, 0), rgb(18, 18, 18)), 
+        url('/img/background2.png');
+    background-size: cover; 
+    background-position: center;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+
+.home-me {
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    padding: 20px;
+}
+
+.home-me-1 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.home-me-2 {
+    font-weight: bold;
+    font-size: 5.6rem;
+    width: 60%;
+    margin-bottom: 20px;
+}
+
+.cv-button {
+    border: 1px solid #2ae973;
+    color: #2ae973;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: rgb(0, 0, 0, 0);
+    padding: 0.6rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.cv-button:hover {
+    box-shadow: 0px 0px 2px 1px rgba(42,233,115,1);
+}
+
+.contact-button {
+    border: none;
+    color: #2ae973;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 0.7rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.contact-button:hover {
+    box-shadow: 0px 0px 2px 1px rgba(42,233,115,1);
+}
+
+.home-me i {
+    font-size: 1.6rem;
+    padding-top: 16px;
+    padding-right: 8px;
+    padding-left: 2px;
+}
+
+@media (max-width: 858px) {
+    .home-me-2 {
+        font-size: 4.4rem;
+    }
+}
+
+/* ABOUT */
+
+.about {
+    height: 700px;
+    width: 100%;
+    position: relative;
+}
+
+.about-me {
+    font-weight: bold;
+    font-size: 5.6rem;
+    width: 60%;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    padding: 20px;
+}
+
+.about-me-description {
+    position: absolute;
+    top: 45%;
+    left: 16%;
+    width: 40%;
+    line-height: 1.5;
+}
+
+@media (max-width: 858px) {
+    .about-me {
+        width: 90%;
+        font-size: 4.2rem;
+    }
+
+    .about-me-description {
+        width: 75%;
+        text-align: justify;
+    }
+}
+
+/* SKILLS */
+
+.skills {
+    height: 600px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 200px;
+}
+
+.skills-title {
+    font-size: 5.6rem;
+    margin-bottom: 20px;
+}
+
+.skills-icons {
+    display: flex;
+    gap: 20px;
+    padding-right: 80px;
+}
+
+.skills-icons i {
+    font-size: 2.6rem;
 }
