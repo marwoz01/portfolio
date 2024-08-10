@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="/img/logo.png">
     <script src="https://kit.fontawesome.com/fa89887d76.js" crossorigin="anonymous"></script>
     <title>Marcel Woźniak</title>
 
 </head>
 <body>
+
     <div class="page-loader">
         <div class="terminal-loader">
             <div class="terminal-header">
@@ -24,9 +26,11 @@
     </div>
 
     <nav>
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
-            <i class="fas fa-bars"></i>
+        <input type="checkbox" id="checkbox">
+        <label for="checkbox" class="toggle">
+            <div class="bars" id="bar1"></div>
+            <div class="bars" id="bar2"></div>
+            <div class="bars" id="bar3"></div>
         </label>
         <label class="logo">mw<span class="greencolor">.</span></label>
         <ul class="nav-list">
@@ -40,15 +44,15 @@
 
     <main>
         <div class="main-container">
-            <div class="background-overlay"></div>
             <div class="home-content">
                 <div class="home-me">
                     <p class="home-me-1">Hi, I'm Marcel</p>
                     <p class="home-me-2"><span class="greencolor">Frontend</span> Developer</p>
-                    <button class="cv-button">Download CV</button>
-                    <button class="contact-button">Contact Me</button><br>
-                    <i class="fa-brands fa-github"></i>
-                    <i class="fa-brands fa-linkedin"></i>
+                        <button class="cv-button">Download CV</button>
+                        <button class="contact-info">Get In Touch</button>
+                        <br>
+                        <i class="fa-brands fa-github"></i>
+                        <i class="fa-brands fa-linkedin"></i>
                 </div>
                 <div class="home-photo">
                     <img src="/img/japng.png" alt="moja fotka" width="300" height="300">
@@ -56,39 +60,6 @@
             </div>
         </div>
     </main>
-    
-
-    <div class="about">
-        <p class="about-me">About Me<span class="greencolor">.</span></p>
-        <div class="about-content">
-            <div class="photo-of-me">
-                <img src="/img/japng.png" alt="moja fotka" width="300" height="300">
-            </div>
-            <p class="about-me-description">Hi, I'm Marcel, a frontend web developer and designer. I specialize in creating modern, responsive websites. I am passionate about design and strive to create elegant, intuitive interfaces. I love what I'm doing, and that's why I give my all in every new challenge.</p>
-        </div>
-    </div>
-
-    <div class="skills">
-        <p class="skills-title">Skill-set<span class="greencolor">.</p>
-            <div class="skills-list">
-                <ul><p class="skills-list-title">Web Design</p>
-                    <li>Figma</li>
-                    <li>Photoshop</li>
-                    <li>Canva</li>
-                </ul>
-                <ul><p class="skills-list-title">Frontend</p>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                    <li>Bootstrap</li>
-                    <li>React</li>
-                </ul>
-                <ul><p class="skills-list-title">Backend</p>
-                    <li>PHP</li>
-                    <li>SQL</li>
-                </ul>
-            </div>
-    </div>
 
     <script src="scripts.js"></script>
 </body>
