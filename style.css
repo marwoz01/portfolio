@@ -672,6 +672,7 @@ main {
   display: flex;
   justify-content: center;
   gap: 6rem;
+  flex-wrap: wrap;
 }
 
 .contact-window {
@@ -702,6 +703,27 @@ main {
   padding-bottom: 1.4rem;
 }
 
+@media (max-width: 1024px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-window,
+  .contact-information {
+    width: 80%;
+    margin-bottom: 0;
+  }
+
+  .contact-window-title {
+    font-size: 1.4rem;
+  }
+
+  .contact-window-description {
+    font-size: 0.8rem;
+  }
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -729,6 +751,10 @@ main {
 
 .contact-input::placeholder, .contact-textarea::placeholder {
   color: rgb(173, 173, 173);
+}
+
+.contact-input:checked, .contact-textarea:checked {
+  border-color: #2ae973;
 }
 
 .contact-textarea {
