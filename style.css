@@ -661,3 +661,140 @@ main {
     width: 340px;
   }
 }
+
+
+/* CONTACT SECTION */
+
+.contact-container {
+  margin-top: 200px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+}
+
+.contact-window {
+  width: 30%;
+  height: auto;
+  background-color: rgba(126, 126, 126, 0.1);
+  border-radius: 12px;
+  padding: 1.4rem;
+}
+
+.contact-information {
+  width: 30%;
+  height: 580px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center
+}
+
+.contact-window-title {
+  color: #2ae973;
+  font-size: 2.2rem;
+  padding-bottom: 1.4rem;
+}
+
+.contact-window-description {
+  line-height: 1.4rem;
+  color: rgb(173, 173, 173);
+  padding-bottom: 1.4rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-names {
+  display: flex;
+  gap: 1rem;
+}
+
+.contact-input, .contact-textarea {
+  background-color: rgba(126, 126, 126, 0.1);
+  color: #ffffff;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.contact-input:hover, .contact-textarea:hover {
+  background-color: rgba(126, 126, 126, 0.15);
+}
+
+.contact-input::placeholder, .contact-textarea::placeholder {
+  color: rgb(173, 173, 173);
+}
+
+.contact-textarea {
+  resize: none;
+  height: 200px;
+}
+
+.contact-button {
+  background-color: #2ae973;
+  color: #000;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #17af54;
+}
+
+.contact-information {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.contact-information-box {
+  background-color: rgba(126, 126, 126, 0.1);
+  border-radius: 8px;
+  width: 6rem;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-information-box:hover {
+  background-color: rgba(126, 126, 126, 0.15);
+}
+
+.contact-information-box i {
+  font-size: 2.5rem;
+  color: #2ae973;
+}
+
+.contact-text {
+  margin-left: 1rem;
+}
+
+.contact-text-title {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: rgb(173, 173, 173);
+}
+
+.contact-text-description {
+  padding-top: 0.5rem;
+  color: white;
+}
