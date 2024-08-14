@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 1800);
 });
 
+
+
 // RESPONSIVE HAMBURGER ICON
 const burgerBtn = document.querySelector('.burger');
 const barsIco = burgerBtn.querySelector('.fa-bars');
@@ -20,3 +22,22 @@ const handleNav = () => {
 
 burgerBtn.addEventListener('click', handleNav);
 
+
+
+// SECTIONS
+function showSection(sectionId) {
+    // Hide all sections
+    const sections = document.querySelectorAll('.about-me-content');
+    sections.forEach(section => {
+      section.style.display = 'none';
+    });
+
+    // Show selected section
+    const activeSection = document.getElementById(sectionId);
+    if (activeSection) {
+      activeSection.style.display = 'grid';
+    }
+  }
+
+  // Set section visible by default
+  showSection('education-section');

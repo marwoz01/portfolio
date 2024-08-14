@@ -1,31 +1,105 @@
-<div class="about">
-    <p class="about-me">About Me<span class="greencolor">.</span></p>
-    <div class="about-content">
-        <div class="photo-of-me">
-            <img src="/img/japng.png" alt="moja fotka" width="300" height="300">
-        </div>
-        <p class="about-me-description">Hi, I'm Marcel, a frontend web developer and designer. I specialize in creating modern, responsive websites. I am passionate about design and strive to create elegant, intuitive interfaces. I love what I'm doing, and that's why I give my all in every new challenge.</p>
-    </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="/img/logo.png">
+    <script src="https://kit.fontawesome.com/fa89887d76.js" crossorigin="anonymous"></script>
+    <title>Marcel Woźniak</title>
+</head>
+<body>
+    
+    <nav>
+        <input type="checkbox" id="checkbox">
+        <label for="checkbox" class="toggle">
+            <div class="bars" id="bar1"></div>
+            <div class="bars" id="bar2"></div>
+            <div class="bars" id="bar3"></div>
+        </label>
+        <label class="logo">mw<span class="greencolor">.</span></label>
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a class="active" href="about.html">About</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
 
-<div class="skills">
-    <p class="skills-title">Skill-set<span class="greencolor">.</p>
-        <div class="skills-list">
-            <ul><p class="skills-list-title">Web Design</p>
-                <li>Figma</li>
-                <li>Photoshop</li>
-                <li>Canva</li>
-            </ul>
-            <ul><p class="skills-list-title">Frontend</p>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>Bootstrap</li>
-                <li>React</li>
-            </ul>
-            <ul><p class="skills-list-title">Backend</p>
-                <li>PHP</li>
-                <li>SQL</li>
-            </ul>
+    <div class="about-me">
+        <div class="about-me-menu">
+            <p class="about-me-title">Why hire me?</p>
+            <p class="about-me-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <button onclick="showSection('education-section')">Education</button>
+            <button onclick="showSection('skills-section')">Skills</button>
+            <button onclick="showSection('about-section')">About Me</button>
         </div>
-</div>
+        <div id="education-section" class="about-me-content">
+            <p class="section-title">My Education</p>
+            <div class="content-box">
+                <p class="content-title">2023 - Present</p>
+                <p class="content-description">PJATK Gdańsk - Computer Science, Sophomore</p>
+            </div>
+            <div class="content-box">
+                <p class="content-title">2023</p>
+                <p class="content-description">Cos tam</p>
+            </div>
+            <div class="content-box">
+                <p class="content-title">2023</p>
+                <p class="content-description">Cos tam</p>
+            </div>
+            <div class="content-box">
+                <p class="content-title">2023</p>
+                <p class="content-description">Cos tam</p>
+            </div>
+        </div>
+    
+        <div id="skills-section" class="about-me-content" style="display: none;">
+            <p class="section-title">My Skills</p>
+            <div class="skills-content">
+                <div class="content-box">
+                    <p class="content-description">
+                        <i class="fa-brands fa-html5"></i>
+                    </p>
+                </div>
+                <div class="content-box">
+                    <p class="content-description">
+                        <i class="fa-brands fa-css3-alt"></i>
+                    </p>
+                </div>
+                <div class="content-box">
+                    <p class="content-description">
+                        <i class="fa-brands fa-js"></i>
+                    </p>
+                </div>
+                <div class="content-box">
+                    <p class="content-description">
+                        <i class="fa-brands fa-bootstrap"></i>
+                    </p>
+                </div>
+                <div class="content-box">
+                    <p class="content-description">
+                        <i class="fa-brands fa-react"></i>
+                    </p>
+                </div>
+                <div class="content-box">
+                    <p class="content-description">
+                        <i class="fa-brands fa-figma"></i>
+                    </p>
+                </div>
+            </div>
+        </div>
+    
+        <div id="about-section" class="about-me-content" style="display: none;">
+            <p class="section-title">About Me</p>
+            <div class="content-box">
+                <p class="content-title">Who am I?</p>
+                <p class="content-description">I am passionate about technology and programming with a passion for creating elegant and functional solutions. I specialize in frontend, especially HTML, CSS and JavaScript, with experience in frameworks such as React. I always strive for perfection in every project and I willingly take on new challenges.</p>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
