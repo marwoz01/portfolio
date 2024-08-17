@@ -285,35 +285,34 @@ body {
 
 /* MAIN */
 main {
-  position: relative;
-  z-index: 1;
-  height: 900px;
-  overflow: hidden;
-}
-
-.main-container {
-  position: relative;
-  height: 100%;
+  margin-top: 260px;
   width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+  flex-wrap: wrap;
 }
 
 .home-content {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  position: relative;
-  top: 30%;
+  width: 70%;
 }
 
 .home-me {
-  width: 50%;
-  padding: 20px;
-  padding-left: 20rem;
+  width: 30%;
+  height: auto;
 }
 
 .home-photo {
-  width: 50%;
-  padding-left: 6rem;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+}
+
+.home-me, .home-photo {
+  flex: 1;
 }
 
 .home-me i:hover {
@@ -387,53 +386,36 @@ main {
   color: #2ae973;
 }
 
-@media (max-width: 1280px) {
-  .home-me {
-    width: 50%;
-    padding: 20px;
-    padding-left: 2;
+@media (max-width: 1440px) {
+  .home-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center; 
   }
 
+  .home-me,
   .home-photo {
-    width: 50%;
-    padding-left: 2rem;
+    width: 65%;
+    margin-bottom: 2rem;
+  }
+
+  .home-me-1 {
+    font-size: 2rem;
+  }
+
+  .home-me-2 {
+    font-size: 3.6rem;
+    width: 100%;
+  }
+
+  .home-photo img {
+    width: 250px;
+    height: 250px;
   }
 }
 
-@media (max-width: 1024px) {
-    .home-me {
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
-    .home-photo img {
-        width: 250px;
-        height: 250px;
-    }
-
-    .home-me-1 {
-      font-size: 1.6rem;
-    }
-
-    .home-me-2 {
-        font-size: 3.8rem;
-    }
-
-    .home-photo {
-        margin-left: 20px;
-    }
-
-    .contact-info {
-      margin-top: 0.8rem;
-      margin-left: 0;
-  }
-}
-
-@media (max-width: 700px) {
-    .home-content {
-      flex-direction: column;
-      align-items: flex-start;
-  }
-}
 
 
 
@@ -688,7 +670,7 @@ main {
   height: 580px;
   border-radius: 12px;
   display: flex;
-  justify-content: center
+  justify-content: center;
 }
 
 .contact-window-title {
