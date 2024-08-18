@@ -8,69 +8,72 @@
         <script src="https://kit.fontawesome.com/fa89887d76.js" crossorigin="anonymous"></script>
         <title>Marcel Woźniak</title>
     </head>
-<body>
+    <body>
+        <nav>
+            <input type="checkbox" id="checkbox">
+            <label for="checkbox" class="toggle">
+                <div class="bars" id="bar1"></div>
+                <div class="bars" id="bar2"></div>
+                <div class="bars" id="bar3"></div>
+            </label>
+            <a href="index.html" class="logo">
+                mw<span class="greencolor">.</span>
+            </a>
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a class="active" href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
     
-    <nav>
-        <input type="checkbox" id="checkbox">
-        <label for="checkbox" class="toggle">
-            <div class="bars" id="bar1"></div>
-            <div class="bars" id="bar2"></div>
-            <div class="bars" id="bar3"></div>
-        </label>
-        <label class="logo">mw<span class="greencolor">.</span></label>
-        <ul class="nav-list">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a class="active" href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-
-    <div class="contact-container">
-        <div class="contact-window">
-            <p class="contact-window-title">Let's work together</p>
-            <p class="contact-window-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nesciunt sit illo esse commodi.</p>
-
-            <form class="contact-form">
-                <div class="contact-names">
-                    <input type="text" class="contact-input" placeholder="Firstname">
-                    <input type="text" class="contact-input" placeholder="Lastname">
+        <div class="contact-container">
+            <div class="contact-window">
+                <p class="contact-window-title">Let's work together</p>
+                <p class="contact-window-description">I am open to new challenges and ready to achieve unique goals together.</p>
+    
+                <form id="contact-form" class="contact-form" action="send-email.php" method="post">
+                    <div class="contact-names">
+                        <input type="text" id="firstname" name="firstname" class="contact-input" placeholder="Firstname" required>
+                        <input type="text" id="lastname" name="lastname" class="contact-input" placeholder="Lastname" required>
+                    </div>
+                    <input type="email" id="email" name="email" class="contact-input" placeholder="Email address" required>
+                    <textarea id="message" name="message" class="contact-textarea" placeholder="Type your message here." required></textarea>
+                    <button type="submit" class="contact-button">Send message</button>
+                </form>
+            </div>
+            <div class="contact-information">
+                <div class="contact-item">
+                    <div class="contact-information-box">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div class="contact-text">
+                        <p class="contact-text-title">Phone</p>
+                        <p class="contact-text-description">(+48) 794 121 272</p>
+                    </div>
                 </div>
-                <input type="email" class="contact-input" placeholder="Email address">
-                <textarea class="contact-textarea" placeholder="Type your message here."></textarea>
-                <button type="submit" class="contact-button">Send message</button>
-            </form>
+                <div class="contact-item">
+                    <div class="contact-information-box">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="contact-text">
+                        <p class="contact-text-title">Email</p>
+                        <p class="contact-text-description">marwozniak01@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-information-box">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="contact-text">
+                        <p class="contact-text-title">Address</p>
+                        <p class="contact-text-description">Gdańsk, Jasień</p>
+                    </div>
+                </div>
+            </div>        
         </div>
-        <div class="contact-information">
-            <div class="contact-item">
-                <div class="contact-information-box">
-                    <i class="fa-solid fa-phone"></i>
-                </div>
-                <div class="contact-text">
-                    <p class="contact-text-title">Phone</p>
-                    <p class="contact-text-description">(+48) 794 121 272</p>
-                </div>
-            </div>
-            <div class="contact-item">
-                <div class="contact-information-box">
-                    <i class="fa-solid fa-envelope"></i>
-                </div>
-                <div class="contact-text">
-                    <p class="contact-text-title">Email</p>
-                    <p class="contact-text-description">marwozniak01@gmail.com</p>
-                </div>
-            </div>
-            <div class="contact-item">
-                <div class="contact-information-box">
-                    <i class="fa-solid fa-location-dot"></i>
-                </div>
-                <div class="contact-text">
-                    <p class="contact-text-title">Address</p>
-                    <p class="contact-text-description">Gdańsk, Jasień</p>
-                </div>
-            </div>
-        </div>        
-    </div>
 
-</body>
+        <script src="scripts.js"></script>
+    
+    </body>
 </html>
