@@ -30,7 +30,8 @@
         </ul>
     </nav>
 
-    <div class="projects-container">
+    <swiper-container class="mySwiper" navigation="true">
+        <swiper-slide>
         <div class="projects">
             <div class="projects-info">
                 <p class="projects-title">Marshall Headset Landing Page</p>
@@ -40,12 +41,13 @@
                     <i class="fa-brands fa-github"></i>
                 </a>
             </div>
-
+    
             <div class="projects-photo">
                 <img src="/img/marshall.png" alt="marshall">
             </div>
         </div>
-
+        </swiper-slide>
+        <swiper-slide>
         <div class="projects">
             <div class="projects-info">
                 <p class="projects-title">Car Rental</p>
@@ -55,21 +57,15 @@
                     <i class="fa-brands fa-github"></i>
                 </a>
             </div>
-
+    
             <div class="projects-photo">
-                <img src="/img/marshall.png" alt="marshall">
+                <img src="/img/carrental.png" alt="marshall">
             </div>
         </div>
-    </div>
-
-    <div class="projects-scroll">
-        <button class="project-left">
-            <i class="fa-solid fa-arrow-left"></i>
-        </button>
-        <button class="project-right">
-            <i class="fa-solid fa-arrow-right"></i>
-        </button>
-    </div>
+        </swiper-slide>
+    </swiper-container>
+      
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 
 </body>
 </html>
