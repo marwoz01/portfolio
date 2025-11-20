@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
             <h2
               className={`${sedgwickAve.className} text-zinc-300 text-lg py-2`}
             >
-              Frontend Developer
+              Web Developer
             </h2>
           </div>
 
