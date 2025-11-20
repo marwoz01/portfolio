@@ -9,7 +9,7 @@ export default function AboutMePage() {
       smooth user experiences. I enjoy combining technical precision with{" "}
       <span className={sedgwickAve.className}>creativity</span>, turning ideas
       into functional, visually appealing web projects. Currently, I’m
-      developing my skills in React and exploring modern tools like Tailwind CSS, Next.js and Express.jsto create fast and dynamic websites.
+      developing my skills in React and exploring modern tools like Tailwind CSS, Next.js and Express.js to create fast and dynamic websites.
     </p>
   );
 }
