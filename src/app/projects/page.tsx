@@ -1,5 +1,11 @@
+type Project = {
+  title: string;
+  live: string;
+  github: string;
+};
+
 export default function ProjectsPage() {
-  const projects = [
+  const projects: Project[] = [
     {
       title: "Character Counter",
       live: "https://marwoz01.github.io/character-counter/",
