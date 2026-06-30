@@ -1,11 +1,9 @@
 # Portfolio
-Proste portfolio stworzone w Next.js, prezentujące moje projekty, krótką sekcję o mnie oraz dane kontaktowe.
 
-## Technologie
-- Next.js
-- React  
-- Tailwind CSS  
-- Spline
+Empty portfolio project built with Next.js, React, TypeScript, and Tailwind CSS.
 
-## Demo
-[https://portfolio-tau-rosy-37.vercel.app](https://portfolio-tau-rosy-37.vercel.app)
+## Development
+
+```bash
+npm run dev
+```

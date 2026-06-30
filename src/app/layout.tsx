@@ -1,34 +1,64 @@
+import type { Metadata } from "next";
+import { Archivo_Black, Inter, JetBrains_Mono } from "next/font/google";
+import localFont from "next/font/local";
+import { getDictionary } from "@/i18n/dictionary";
+import { getLocale } from "@/i18n/get-locale";
 import "./globals.css";
-import Navbar from "@/app/components/Navbar";
-import { sedgwickAve } from "./fonts";
-import SplineBg from "@/app/components/SplineBg";
 
-export default function RootLayout({
+const inter = Inter({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const archivoBlack = Archivo_Black({
+  weight: "400",
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-archivo",
+  display: "swap",
+});
+
+const drukWide = localFont({
+  src: "./fonts/druk-wide/DrukWide-Medium.ttf",
+  weight: "500",
+  style: "normal",
+  variable: "--font-druk",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-jetbrains",
+  display: "swap",
+});
+
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const t = getDictionary(locale);
+
+  return {
+    title: t.metadata.title,
+    description: t.metadata.description,
+  };
+}
+
+export default async function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
-  return (
-    <html lang="pl">
-      <body className="relative text-white">
-        <SplineBg />
-        <div
-          aria-hidden
-          className="fixed bottom-0 right-0 w-[420px] h-[220px] bg-[radial-gradient(ellipse_at_bottom_right,_#0a0a0a_0%,_#0a0a0a_25%,_rgba(10,10,10,0.7)_55%,_transparent_85%)] z-10 pointer-events-none"
-        />
-        <header className="fixed top-16 left-16 z-20">
-          <h1 className="text-gray-400 text-4xl">Marcel Woźniak</h1>
-          <div className="relative inline-block">
-            <h2
-              className={`${sedgwickAve.className} text-zinc-300 text-lg py-2`}
-            >
-              Web Developer
-            </h2>
-          </div>
+}>) {
+  const locale = await getLocale();
 
-          <Navbar />
-        </header>
-        <main className="relative z-20">{children}</main>
+  return (
+    <html
+      lang={locale}
+      className={`${drukWide.variable} ${inter.variable} ${archivoBlack.variable} ${jetbrainsMono.variable}`}
+    >
+      <body>
+        <noscript>
+          <style>{`.reveal{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
+        {children}
       </body>
     </html>
   );
