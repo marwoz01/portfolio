@@ -41,7 +41,7 @@ export const dictionary = {
         },
         {
           label: "Quality",
-          title: "Czyste komponenty + performance",
+          title: "Dopracowany kod + wydajność",
         },
       ],
     },
@@ -175,7 +175,7 @@ export const dictionary = {
         },
         {
           label: "Quality",
-          title: "Clean components + performance",
+          title: "Polished code + performance",
         },
       ],
     },
