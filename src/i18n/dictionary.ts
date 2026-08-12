@@ -29,7 +29,6 @@ export const dictionary = {
         "Buduję responsywne interfejsy w React, Next.js i TypeScript, dbając o czysty kod, dostępność, wydajność oraz dopracowane detale UI.",
       primaryCta: "Zobacz projekty",
       secondaryCta: "Porozmawiajmy",
-      scrollAria: "Przewiń do projektów",
       badges: [
         {
           label: "Front-end",
@@ -74,7 +73,10 @@ export const dictionary = {
           group: "Back-end / CMS",
           items: ["Node.js", "Express", "Payload CMS"],
         },
-        { group: "Motion", items: ["GSAP", "Framer Motion"] },
+        {
+          group: "Motion",
+          items: ["GSAP", "Framer Motion", "Three.js", "Spline"],
+        },
         { group: "Workflow", items: ["Git", "Claude Code", "Codex"] },
       ],
       links: {
@@ -163,7 +165,6 @@ export const dictionary = {
         "I build responsive interfaces in React, Next.js and TypeScript, with care for clean code, accessibility, performance and polished UI details.",
       primaryCta: "See projects",
       secondaryCta: "Let’s talk",
-      scrollAria: "Scroll to projects",
       badges: [
         {
           label: "Front-end",
@@ -208,7 +209,10 @@ export const dictionary = {
           group: "Back-end / CMS",
           items: ["Node.js", "Express", "Payload CMS"],
         },
-        { group: "Motion", items: ["GSAP", "Framer Motion"] },
+        {
+          group: "Motion",
+          items: ["GSAP", "Framer Motion", "Three.js", "Spline"],
+        },
         { group: "Workflow", items: ["Git", "Claude Code", "Codex"] },
       ],
       links: {

@@ -94,6 +94,7 @@ export const projects: ProjectCase[] = [
       alt: "Logo Oxfordmed",
       className: "h-10 max-w-[180px]",
     },
+    live: "https://oxfordmed.vercel.app/pl",
     previewImage: "/images/projects/oxfordmed.png",
     tallImage: "/images/projects/tall/oxfordmed.jpg",
     galleryImages: [
@@ -207,6 +208,164 @@ export const projects: ProjectCase[] = [
         alt: "Widok strony Pimento - końcowa sekcja",
         orientation: "wide",
         fit: "cover",
+      },
+    ],
+  },
+  {
+    slug: "tattoo-studio",
+    name: "Tattoo Studio",
+    shortDescription:
+      "Tattoo Studio to strona wizytówkowa studia tatuażu z galerią realizacji, prezentacją artystów i formularzem rezerwacji konsultacji. Cała treść, w dwóch językach, prowadzona jest z panelu Payload CMS, więc wdrożenie u kolejnego klienta to podmiana danych, a nie przepisywanie kodu.",
+    overview:
+      "Tattoo Studio to projekt strony dla studia tatuażu zbudowany na Next.js i Payload CMS. Powstał dla fikcyjnej marki FOSSIL, ale od pierwszego dnia jako produkt do wdrożenia u realnego klienta, dlatego żaden tekst ani żadne zdjęcie nie są zaszyte w kodzie.",
+    challenge:
+      "Strona ma sprzedawać sztukę na skórze, więc interfejs musiał zejść na drugi plan i oddać całą uwagę fotografii. Drugim wyzwaniem było przekazanie właścicielowi studia pełnej kontroli nad treścią, bez kontaktu z programistą.",
+    challengePoints: [
+      "Surowy monochrome, w którym cały ciężar niosą zdjęcia",
+      "Model treści w Payload CMS: prace, artyści, style, zgłoszenia",
+      "Formularz rezerwacji z zapisem do bazy i mailem przez Resend",
+      "Pełna dwujęzyczność PL i EN oparta o lokalizację Payloada",
+    ],
+    result:
+      "Powstała jednostronicowa witryna z galerią realizacji, sekcją stylów, zespołem i rezerwacją konsultacji, w całości zarządzana z panelu. Ostra, czarno-biała typografia i animacje przewijania budują klimat galerii, a treść zostaje po stronie klienta.",
+    translations: {
+      en: {
+        shortDescription:
+          "Tattoo Studio is a showcase website for a tattoo studio with a portfolio gallery, artist profiles and a consultation booking form. All content, in two languages, is managed from the Payload CMS panel, so deploying it for the next client means swapping data instead of rewriting code.",
+        overview:
+          "Tattoo Studio is a website project for a tattoo studio built on Next.js and Payload CMS. It was created for the fictional FOSSIL brand, but from day one as a product meant for a real client, which is why no text and no photo are hardcoded.",
+        challenge:
+          "The site has to sell art on skin, so the interface had to step back and give all attention to the photography. The second challenge was handing the studio owner full control over the content, without going through a developer.",
+        challengePoints: [
+          "A raw monochrome look where the photos carry all the weight",
+          "Content model in Payload CMS: works, artists, styles, bookings",
+          "Booking form saved to the database and emailed through Resend",
+          "Full PL and EN bilingualism based on Payload localization",
+        ],
+        result:
+          "The result is a single-page website with a portfolio gallery, styles section, team and consultation booking, fully managed from the admin panel. Sharp black and white typography and scroll-driven animation build a gallery mood, while the content stays on the client's side.",
+      },
+    },
+    technologies: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Payload CMS",
+      "PostgreSQL",
+      "GSAP",
+      "Resend",
+    ],
+    fallbackLabel: "Fossil",
+    live: "https://tattoo-studio-eosin.vercel.app/pl",
+    previewImage: "/images/projects/tattoo-studio1.png",
+    tallImage: "/images/projects/tall/tattoo-studio.jpg",
+    galleryImages: [
+      {
+        src: "/images/projects/tattoo-studio1.png",
+        alt: "Widok strony Tattoo Studio - hero",
+        orientation: "wide",
+      },
+      {
+        src: "/images/projects/tattoo-studio2.png",
+        alt: "Widok strony Tattoo Studio - o studiu",
+        orientation: "wide",
+      },
+      {
+        src: "/images/projects/tattoo-studio3.png",
+        alt: "Widok strony Tattoo Studio - galeria realizacji",
+        orientation: "wide",
+      },
+      {
+        src: "/images/projects/tattoo-studio4.png",
+        alt: "Widok strony Tattoo Studio - style tatuażu",
+        orientation: "wide",
+      },
+      {
+        src: "/images/projects/tattoo-studio5.png",
+        alt: "Widok strony Tattoo Studio - zespół",
+        orientation: "wide",
+      },
+      {
+        src: "/images/projects/tattoo-studio6.png",
+        alt: "Widok strony Tattoo Studio - rezerwacja konsultacji",
+        orientation: "wide",
+      },
+    ],
+  },
+  {
+    slug: "verso",
+    name: "Verso",
+    shortDescription:
+      "Verso to przeglądarkowa gra o porównywaniu nieporównywalnych. Czy produkcja GTA kosztowała więcej niż budowa Burj Khalifa? Czy Polskę zamieszkuje więcej ludzi, niż Taylor Swift ma miesięcznych słuchaczy? Gra zestawia dwa obiekty z zupełnie różnych światów, sprowadza je do wspólnej jednostki i pyta o jedno: więcej czy mniej.",
+    overview:
+      "Verso bierze rzeczy, których normalnie nikt ze sobą nie zestawia, i sprowadza je do wspólnej jednostki: budżet gry i PKB państwa, prędkość geparda i prędkość stacji kosmicznej, wysokość wieżowca i długość statku. Cała satysfakcja siedzi w momencie odsłonięcia wartości, kiedy okazuje się, że intuicja co do skali potrafi być kompletnie chybiona.",
+    challenge:
+      "Klasyczny higher/lower prowadzi łańcuch jednostką, więc po kilku rundach gra grzęźnie w tej samej kategorii. Trzeba było przenieść ciągłość na obiekt i zbudować silnik, który sam znajduje dalszą drogę, zamiast zakleszczać łańcuch.",
+    challengePoints: [
+      "Silnik łańcucha zmieniający cechę i jednostkę co rundę",
+      "Odsłona wartości i przejście karty animowane w GSAP",
+      "Ciemny system z jednym akcentem, sterowanie klawiaturą, reduced motion",
+      "Dwujęzyczność PL i EN wraz z formatowaniem liczb dla każdej jednostki",
+    ],
+    result:
+      "Efektem jest grywalny tryb Endless z płynnym odsłanianiem wartości, licznikiem serii i zapisywanym rekordem. Projekt pokazuje pracę z logiką gry pokrytą testami, animacją GSAP i konsekwentnym systemem wizualnym.",
+    translations: {
+      en: {
+        shortDescription:
+          "Verso is a browser game about comparing the incomparable. Did GTA cost more to make than the Burj Khalifa cost to build? Does Poland have more residents than Taylor Swift has monthly listeners? The game puts two objects from completely different worlds side by side, reduces them to a shared unit and asks one thing: higher or lower?",
+        overview:
+          "Verso takes things nobody would normally put side by side and reduces them to a shared unit: a game's budget and a country's GDP, the speed of a cheetah and the speed of a space station, the height of a tower and the length of a ship. The payoff sits in the moment the value is revealed, when it turns out that intuition about scale can be completely wrong.",
+        challenge:
+          "A classic higher/lower game carries the chain through the unit, so after a few rounds it gets stuck in the same category. Continuity had to move to the object, along with an engine that finds its own way forward instead of deadlocking the chain.",
+        challengePoints: [
+          "A chain engine that switches trait and unit every round",
+          "Value reveal and card transition animated in GSAP",
+          "Dark system with one accent, keyboard controls, reduced motion",
+          "PL and EN bilingualism with number formatting per unit",
+        ],
+        result:
+          "The result is a playable Endless mode with a smooth value reveal, streak counter and a stored best score. The project shows work with game logic covered by tests, GSAP animation and a consistent visual system.",
+      },
+    },
+    technologies: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "GSAP",
+      "Vitest",
+    ],
+    fallbackLabel: "Game",
+    live: "https://verso-seven-phi.vercel.app/pl",
+    github: "https://github.com/marwoz01/verso",
+    previewImage: "/images/projects/verso1.png",
+    tallImage: "/images/projects/tall/verso.jpg",
+    galleryImages: [
+      {
+        src: "/images/projects/verso1.png",
+        alt: "Widok gry Verso - ekran startowy",
+        orientation: "wide",
+      },
+      {
+        src: "/images/projects/verso2.png",
+        alt: "Widok gry Verso - pojedynek dwóch obiektów",
+        orientation: "wide",
+      },
+      {
+        src: "/images/projects/verso3.png",
+        alt: "Widok gry Verso - odsłonięta wartość",
+        orientation: "wide",
+      },
+      {
+        src: "/images/projects/verso4.png",
+        alt: "Widok gry Verso - pojedynek w wersji polskiej",
+        orientation: "wide",
+      },
+      {
+        src: "/images/projects/verso5.png",
+        alt: "Widok gry Verso - ekran startowy w wersji polskiej",
+        orientation: "wide",
       },
     ],
   },

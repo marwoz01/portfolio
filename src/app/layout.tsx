@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Archivo_Black, Inter, JetBrains_Mono } from "next/font/google";
 import localFont from "next/font/local";
+import { PageLoader } from "@/components/PageLoader";
 import { getDictionary } from "@/i18n/dictionary";
 import { getLocale } from "@/i18n/get-locale";
 import "./globals.css";
@@ -56,8 +57,9 @@ export default async function RootLayout({
     >
       <body>
         <noscript>
-          <style>{`.reveal{opacity:1!important;transform:none!important}`}</style>
+          <style>{`.reveal{opacity:1!important;transform:none!important}#page-loader{display:none!important}`}</style>
         </noscript>
+        <PageLoader />
         {children}
       </body>
     </html>

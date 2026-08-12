@@ -10,21 +10,14 @@ import { navigateToTab } from "./portfolio-nav";
 import { RippleButton } from "./RippleButton";
 
 type HeaderProps = {
-  forceSolid?: boolean;
   locale: Locale;
   nav: Dictionary["nav"];
   language: Dictionary["language"];
 };
 
-export function Header({
-  forceSolid = false,
-  locale,
-  nav,
-  language,
-}: HeaderProps) {
+export function Header({ locale, nav, language }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const solid = forceSolid || scrolled;
   const navLinks = [
     { href: "/#top", label: nav.home },
     { href: "/#about", label: nav.about },
@@ -77,18 +70,27 @@ export function Header({
   };
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,backdrop-filter] duration-[400ms] ease-out ${
-        solid
-          ? "border-b border-secondary bg-bg/[0.84] shadow-md backdrop-blur-[16px]"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="relative z-50 flex h-[80px] w-full items-center justify-between px-6 md:px-8">
+    <header className="fixed inset-x-0 top-0 z-50">
+      {/* Pasek nawigacji jest górną krawędzią jasnej ramki, więc zawsze
+          chodzi na odwróconej palecie. */}
+      <div
+        className={`invert-theme relative z-50 flex h-(--header-h) w-full items-center justify-between px-6 transition-[border-color,box-shadow] duration-400 ease-out md:px-8 ${
+          scrolled
+            ? "border-b border-secondary shadow-[0_10px_30px_rgba(0,0,0,0.08)]"
+            : "border-b border-transparent"
+        }`}
+      >
         <Link href="/#top" className="inline-flex items-center gap-3">
           <span className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-[10px] bg-primary">
+            {/* Ikona ma białe tło bez alfy, więc na ciemnym kafelku odwracamy ją filtrem. */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/icon.png" alt="marvo logo" width={34} height={34} />
+            <img
+              src="/icon.png"
+              alt="marvo logo"
+              width={34}
+              height={34}
+              className="invert"
+            />
           </span>
         </Link>
 
@@ -117,7 +119,7 @@ export function Header({
           ))}
           <RippleButton
             href="/contact"
-            variant="white"
+            variant="black"
             size="sm"
             icon={<Mail aria-hidden size={16} strokeWidth={1.8} />}
             iconPosition="left"
@@ -139,7 +141,7 @@ export function Header({
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
           onClick={() => setMenuOpen((open) => !open)}
-          className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-white/10 bg-white/10 text-fg shadow-[0_12px_28px_rgba(0,0,0,0.18)] backdrop-blur-md transition-[background-color,border-color,transform] duration-200 ease-out active:scale-95 md:hidden"
+          className="inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-lg border border-primary/15 bg-primary/10 text-fg transition-[background-color,border-color,transform] duration-200 ease-out hover:bg-primary/15 active:scale-95 md:hidden"
         >
           {menuOpen ? (
             <X aria-hidden size={22} strokeWidth={1.8} />

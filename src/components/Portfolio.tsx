@@ -215,7 +215,7 @@ export function Portfolio({ locale, t }: PortfolioProps) {
                     aria-selected={active}
                     aria-controls={`panel-${t.id}`}
                     onClick={() => setTab(t.id)}
-                    className={`relative -mb-px pb-3 font-display text-[clamp(17px,1.7vw,22px)] font-medium tracking-[-0.02em] transition-colors duration-200 ease-out ${
+                    className={`relative -mb-px cursor-pointer pb-3 font-display text-[clamp(17px,1.7vw,22px)] font-medium tracking-[-0.02em] transition-colors duration-200 ease-out ${
                       active ? "text-fg" : "text-fg-subtle hover:text-fg-muted"
                     }`}
                   >

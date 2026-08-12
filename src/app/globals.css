@@ -41,6 +41,12 @@
     box-sizing: border-box;
   }
 
+  :root {
+    /* Wysokość paska nawigacji. Nawigacja jest górną krawędzią jasnej ramki,
+       więc panele treści odsuwają się od góry dokładnie o tę wartość. */
+    --header-h: 80px;
+  }
+
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
@@ -194,6 +200,104 @@
   .underline-draw {
     animation: underline-draw var(--draw-dur, 0.7s) var(--ease-out)
       var(--draw-delay, 0.6s) both;
+  }
+
+  /* Jasna ramka: nawigacja i marginesy są chromem strony, treść jest panelem. */
+  .page-frame {
+    --frame-gap: 10px;
+    padding: var(--frame-gap);
+    padding-top: var(--header-h);
+    background: var(--color-primary);
+  }
+
+  .page-panel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 28px;
+    background: var(--color-bg);
+  }
+
+  @media (min-width: 720px) {
+    .page-frame {
+      --frame-gap: 14px;
+    }
+
+    .page-panel,
+    .page-panel > .shell {
+      min-height: calc(100svh - var(--header-h) - var(--frame-gap));
+    }
+  }
+
+  .page-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    background: var(--color-bg);
+    transition:
+      opacity 0.55s var(--ease-out),
+      visibility 0.55s var(--ease-out);
+  }
+
+  .page-loader.is-leaving {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .page-loader-mark {
+    display: flex;
+    height: 76px;
+    width: 76px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 18px;
+    background: var(--color-primary);
+    animation: loader-mark 1.6s var(--ease-out) infinite;
+  }
+
+  .page-loader-track {
+    display: block;
+    height: 2px;
+    width: 132px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: var(--color-secondary);
+  }
+
+  .page-loader-bar {
+    display: block;
+    height: 100%;
+    width: 40%;
+    border-radius: 999px;
+    background: var(--color-primary);
+    animation: loader-bar 1.15s ease-in-out infinite;
+  }
+}
+
+@keyframes loader-mark {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+@keyframes loader-bar {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(250%);
   }
 }
 

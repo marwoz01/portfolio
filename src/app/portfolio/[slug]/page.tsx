@@ -55,12 +55,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   return (
     <>
-      <Header
-        forceSolid
-        locale={locale}
-        nav={t.nav}
-        language={t.language}
-      />
+      <Header locale={locale} nav={t.nav} language={t.language} />
       <main className="invert-theme min-h-svh overflow-hidden pt-20 text-fg">
         <section className="relative isolate overflow-hidden">
           <Image
